@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
             val InterestRate = editTextInterestRate.text.toString()
 
             val Loan:Double =  CarPrice.toDouble() - DownPayment.toDouble()
-            val Interest:Double = Loan * InterestRate.toDouble() * LoanPeriod.toDouble()
+            val Interest:Double = Loan * (InterestRate.toDouble()/100) * LoanPeriod.toDouble()
             val MonthlyPayment:Double = (Loan + Interest) / LoanPeriod.toDouble() / 12
 
             textViewLoan.text = "Loan: " + "%.2f".format(Loan)
